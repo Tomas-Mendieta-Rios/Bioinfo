@@ -4,6 +4,11 @@ import shutil
 import subprocess
 from Bio import SeqIO
 
+if os.path.exists("motifs_final_results.txt"):
+    os.remove("motifs_final_results.txt")
+if os.path.exists("orf_proteins.fasta"):
+    os.remove("orf_proteins.fasta")
+    
 GenBankPath = "opsina.gb"
 GenBank = SeqIO.read(GenBankPath, "genbank")
 nucleotide_sequence = str(GenBank.seq)
