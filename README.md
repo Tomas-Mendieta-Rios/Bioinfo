@@ -9,3 +9,6 @@ se corre con esta linea: python3 EJ4Marcos.py opsina.gb
 errores posibles: se queda en las lineas de libreria? hay que instalar un paquete
                   patmatmotifs no labura? chequeate lo de prosite y prosextract
 basicamente eso es todo!!
+
+
+PD: Si ya hiciste una vez lo de prosite no hace falta que lo hagas más. Es más evitalo que tira un error boludo. Basicamente elimina las lineas donde aparezca PROSITE y prosextract....SOLO SI YA LO INSTALASTE
