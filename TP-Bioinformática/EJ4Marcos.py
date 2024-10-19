@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import os
 import sys
 import shutil
@@ -28,7 +27,7 @@ if os.path.exists(orf_output):
     os.remove(orf_output)
 # Ejecuta getorf para encontrar los ORFs
 print("Encontrando ORFs en la secuencia de nucleótidos...")
-getorf_command = f"getorf -sequence {fasta_path} -outseq {orf_output}"
+getorf_command = f"getorf -sequence {fasta_path} -outseq {orf_output} -find {1}"
 getorf_result = run_command(getorf_command)
 
 # Verifica si getorf se ejecutó correctamente
@@ -43,17 +42,12 @@ else:
     orf_count = sum(1 for _ in SeqIO.parse(orf_output, "fasta"))
     print(f"Cantidad de ORFs encontrados: {orf_count}")
 
-# Llamar a EMBOSS 'geecee' para calcular el contenido de GC
-os.system('geecee -sequence secuencia.fasta -outfile resultado_gc.txt')
-
 # Contar la cantidad de veces que aparece la secuencia "GCA" en la secuencia de nucleótidos
 ATG_count = nucleotide_sequence.count("ATG")
 stop_count = nucleotide_sequence.count("TGA")+nucleotide_sequence.count("TAA")+nucleotide_sequence.count("TAG")
 
 print(f'La secuencia "start" aparece {ATG_count} veces en la cadena de nucleótidos.')
 print(f'La secuencia "stop" aparece {stop_count} veces en la cadena de nucleótidos.')
-
-# Contar la cantidad de veces que aparece la secuencia "GCA" en la secuencia de nucleótidos
 
 """##Motif"""
 
@@ -118,9 +112,8 @@ while i<=orf_count:
   # Ejecuta patmatmotifs para analizar los motivos en las secuencias de proteínas
   print(f"Analizando motivos de la secuencia {i}")
   orf_output = "orf_individual.fasta"
-  patmatmotifs_command = f"patmatmotifs -sequence {orf_output} -outfile {motifs_output}"
+  patmatmotifs_command = f"patmatmotifs -sequence {orf_output} -outfile {motifs_output} "
   patmatmotifs_result = run_command(patmatmotifs_command)
-
   # Verifica si patmatmotifs se ejecutó correctamente
   if patmatmotifs_result is None:
       print("Error al ejecutar patmatmotifs.")
