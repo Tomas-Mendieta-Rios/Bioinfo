@@ -1,3 +1,11 @@
+#ESTA VERSION ESTA DESACTUALIZADA
+"""
+no la borro porque es la base de todo y quiero que quede como copia de seguridad
+para correr se le debe ingresar el archivo genbank. En nuestro caso el opsina.gb
+para que corra primero ha que setear el patmatmotifs, para eso hay que agregar en una carpeta "PROSITE" 
+en el directorio actual con los archivos de la base de datos Prosite "prosite.dat" y "prosite.doc" 
+despues correr el prosextract. Esto es solo la primera vez y se puede hacer derecho de la terminal.
+"""
 import os
 import sys
 import shutil
@@ -58,7 +66,6 @@ print(f'La secuencia "stop" aparece {stop_count} veces en la cadena de nucleóti
 
 motifs_output = "motifs_individual_results.txt"
 motifs_final_output = "motifs_final_results.txt"
-prosite_path = "/PROSITE"
 ruta_copia = 'orf_copia.fasta'
 
 shutil.copy(orf_output, ruta_copia)
@@ -104,10 +111,12 @@ def individual_orf(archivo_orfs_path):
   # Sobrescribir el archivo original con las líneas restantes
   with open(archivo_orfs_path, 'w') as archivo_entrada:
       archivo_entrada.writelines(lineas_restantes)
-
+"""
+#esta parte solo se corre para setear el patmatmotifs y correr siguiendo los pasos en a las primeras lineas
+prosite_path = "/PROSITE"
 prosextract_command = f"prosextract -prositedir {prosite_path}"
 prosextract_result = run_command(prosextract_command)
-
+"""
 i=1
 while i<=orf_count:
   print("/n", i, "/n" )
