@@ -106,14 +106,15 @@ orf_count = sum(1 for _ in SeqIO.parse(orf_output, "fasta"))
 print(f"Cantidad de ORFs encontrados: {orf_count}")
 
 # Procesar motivos y guardar resultados
+"""
+#Estas lineas solo correr cuando se pone a punto el patmatmotifs
 prosite_path = "/PROSITE"
 prosextract_command = f"prosextract -prositedir {prosite_path}"
 check_result(run_command(prosextract_command), "prosextract")
-
+"""
 shutil.copy(orf_output, 'orf_copia.fasta')
 
 for i in range(1, orf_count + 1):
-    print(f"\n{i}\n")
     individual_orf('orf_copia.fasta')
 
     # Ejecutar patmatmotifs
@@ -125,8 +126,9 @@ for i in range(1, orf_count + 1):
         for linea in archivo:
             if 'HitCount:' in linea:
                 hit_count = linea.split(':')[-1].strip()
-                print(f'HitCount: {hit_count}')
                 if hit_count != "0":
+                    print(f"Motifs encontrado en la secuencia {i}\n")
+                    print(f'HitCount: {hit_count}\n')
                     shutil.copyfileobj(archivo, open("motifs_final_results.txt", 'a'))
 
 remove_file_if_exists("motifs_individual_results.txt")
