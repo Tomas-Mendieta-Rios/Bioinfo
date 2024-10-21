@@ -2,14 +2,15 @@ from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio.Data import CodonTable
+import argparse
 
 
 def generar_cadena_negativa(arnm_seq_positiva):
-	# Lista inicial vacía
+	# Lista inicial vacia
 	largo = len(arnm_seq_positiva)
 	arnm_seq_negativa = [''] * largo
 	
-	# Generación de cadena ARN complementaria
+	# Generacion de cadena ARN complementaria
 	for i in range(largo):
 		nucleotido = arnm_seq_positiva[i]
 		complementario = ''
@@ -23,17 +24,17 @@ def generar_cadena_negativa(arnm_seq_positiva):
 		if nucleotido == 'G':
 			complementario += 'C'
 		
-		# La lista se encuentra invertida, para que la traducción 5' 3' se de desde el comienzo al final de la lista
+		# La lista se encuentra invertida, para que la traduccion 5' 3' se de desde el comienzo al final de la lista
 		arnm_seq_negativa[largo - 1 - i] += complementario
 
-	# Conversión de la lista de caracteres a cadena
+	# Conversion de la lista de caracteres a cadena
 	secuencia_str = ''.join(arnm_seq_negativa)
 
 	# Crear un objeto Seq
 	secuencia_final = Seq(secuencia_str)
 
 	return secuencia_final
-
+		
 
 def traducir_en_tres_marcos(arnm_seq):
 	# Traduccion en los tres marcos de lectura
@@ -54,68 +55,81 @@ def traducir_en_tres_marcos(arnm_seq):
 
 			amino_acido = dic_codon.get(codon) # Aqui se da la traduccion
 			if len(traduccion) == 0:
-				if amino_acido == "M": # Asegurar que el primer aminoacido sea metionina
+				if amino_acido == "M": # Iniciar traduccion con el primer codon AUG
 					traduccion += amino_acido
 			
 			else:
 				if amino_acido != None: # Detener la traduccion al llegar al codon de Stop
 					traduccion += amino_acido
 				else:
-					break	
-				
-		traducciones.append(traduccion)
-
-
+					traducciones.append(traduccion)
+					traduccion = "" # Se consideran los submarcos de lectura luego del codon de stop
+						
+					
 	return traducciones
 
 
+def numero_total_de_ORFs(traducciones):
+	'''
+	Para conocer el numero total de marcos y submarcos de lectura, basta contabilizar
+	todas las metioninas presentes en la lista de traducciones, ya que las subcadenas
+	incluidas en cada traduccion representan un submarco.
+	
+	'''
+	total = 0
+	for traduccion in traducciones:
+		for aminoacido in traduccion:
+			if aminoacido == 'M':
+				total += 1
+
+	print(total)
+
+
 def seleccionar_traduccion_mas_larga(traducciones):
-      	# Encontrar la traduccion con la mayor longitud (criterio heuristico)
-      	traduccion_mas_larga = max(traducciones, key = len)
+	# Encontrar la traduccion con la mayor longitud (criterio heuristico)
+	traduccion_mas_larga = max(traducciones, key = len)
 	posicion_traduccion = traducciones.index(traduccion_mas_larga)
-      	return posicion_traduccion, traduccion_mas_larga
+	return posicion_traduccion, traduccion_mas_larga
 
 
 
 def traducir_arnm_a_aminoacidos(archivo_genbank, archivo_fasta_salida):
-      	# Leer la secuencia de ARN mensajero del archivo GenBank
-      	record = SeqIO.read(archivo_genbank, "genbank")
+	# Leer la secuencia de ARN mensajero del archivo GenBank
+	record = SeqIO.read(archivo_genbank, "genbank")
 	cadena_positiva = record.seq
 
 
 	# Generar la cadena de ARN mensajero complementaria a la del genbank
 	cadena_negativa = generar_cadena_negativa(cadena_positiva)
-  
 
-      	# Traducir la secuencia positiva en los tres marcos de lectura
+
+	# Traducir la secuencia positiva en los tres marcos de lectura
 	traduccion_positiva = traducir_en_tres_marcos(cadena_positiva)
-
-
+	
+	
 	# Traducir la secuencia negativa en los tres marcos de lectura
 	traduccion_negativa = traducir_en_tres_marcos(cadena_negativa)
-
-
+	
+	
 	# Combinar todas las traducciones en una sola lista
 	traducciones = traduccion_positiva + traduccion_negativa
 
 
-      	# Seleccionar la traduccion mas larga
+	# Seleccionar la traduccion mas larga
 	posicion_traduccion, traduccion_mas_larga = seleccionar_traduccion_mas_larga(traducciones)
 
 
-      	# Guardar la secuencia de aminoacidos en formato FASTA
+	# Guardar la secuencia de aminoacidos en formato FASTA
 	record_fasta = SeqRecord(Seq(traduccion_mas_larga), id = f"NP_000504." + str(posicion_traduccion), description = "medium-wave-sensitive opsin 1 [Homo sapiens]")
 
 
-      	with open(archivo_fasta_salida, 'w') as archivo_fasta:
-          	SeqIO.write(record_fasta, archivo_fasta, "fasta")
+	with open(archivo_fasta_salida, 'w') as archivo_fasta:
+		SeqIO.write(record_fasta, archivo_fasta, "fasta")
 
 
 if __name__ == "__main__":
 
-   import argparse
-
-
+   
    parser = argparse.ArgumentParser(description = "Traducir una secuencia de ARNm y guardar la cadena de mayor longitud en formatoFASTA.")
    parser.add_argument("archivo_genbank", help = "Archivo GenBank a traducir")
    parser.add_argument("archivo_fasta_salida", help = "Archivo FASTA donde se guardara la secuencia de aminoacidos") 
