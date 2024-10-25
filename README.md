@@ -5,4 +5,4 @@ Para el resto, hay que elejir añguno de los orf dentro del archivo orf_proteins
 
 Por ultimo, creo que dieron algunos codigos en la practica que nos podrían solucionar muchos quilombos, pero no los conozco.
 
-Elegimos las secuencias 98 y 215 para el tp
+Elegimos las secuencias 23 y 215 para el tp
