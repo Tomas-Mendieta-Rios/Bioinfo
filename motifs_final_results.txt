@@ -1,0 +1,502 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:37
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_12     from: 1   to: 38
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 4
+Start = position 7 of sequence
+End = position 10 of sequence
+
+Motif = AMIDATION
+
+PRSIWIGKRWCACT
+     |  |
+     7  10
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:37
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_23     from: 1   to: 986
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 9
+Start = position 656 of sequence
+End = position 664 of sequence
+
+Motif = DNA_POLYMERASE_B
+
+KFNVLYGDTDSTFVLPTFN
+     |       |
+   656       664
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:38
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_47     from: 1   to: 18
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 3
+Start = position 16 of sequence
+End = position 18 of sequence
+
+Motif = MICROBODIES_CTER
+
+NITVPSRV
+     | |
+    16 18
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:40
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_98     from: 1   to: 346
+# HitCount: 2
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 4
+Start = position 2 of sequence
+End = position 5 of sequence
+
+Motif = AMIDATION
+
+MGGRRVRWEV
+ |  |
+ 2  5
+
+Length = 8
+Start = position 146 of sequence
+End = position 153 of sequence
+
+Motif = ATP_GTP_A
+
+CVLIHGTPGSGKSLTTSI
+     |      |
+   146      153
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:40
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_106     from: 1   to: 11
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 3
+Start = position 9 of sequence
+End = position 11 of sequence
+
+Motif = MICROBODIES_CTER
+
+IRTQTAKI
+     | |
+     9 11
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:40
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_108     from: 1   to: 330
+# HitCount: 3
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 8
+Start = position 295 of sequence
+End = position 302 of sequence
+
+Motif = TYR_PHOSPHO_SITE_1
+
+LQLRSKKGDGMRYSIDTM
+     |      |
+   295      302
+
+Length = 4
+Start = position 143 of sequence
+End = position 146 of sequence
+
+Motif = AMIDATION
+
+LATTIIGRKIAEYE
+     |  |
+   143  146
+
+Length = 8
+Start = position 130 of sequence
+End = position 137 of sequence
+
+Motif = ATP_GTP_A
+
+CCLIHGTPGTGKSLATTI
+     |      |
+   130      137
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:40
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_111     from: 1   to: 89
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 8
+Start = position 54 of sequence
+End = position 61 of sequence
+
+Motif = TYR_PHOSPHO_SITE_1
+
+DERFLKPKECCEYAICNA
+     |      |
+    54      61
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:41
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_132     from: 1   to: 19
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 4
+Start = position 10 of sequence
+End = position 13 of sequence
+
+Motif = AMIDATION
+
+SKLAIGGKKSTEET
+     |  |
+    10  13
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:42
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_152     from: 1   to: 113
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 4
+Start = position 2 of sequence
+End = position 5 of sequence
+
+Motif = AMIDATION
+
+MGGRRVRWEV
+ |  |
+ 2  5
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:43
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_185     from: 1   to: 1253
+# HitCount: 4
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 8
+Start = position 962 of sequence
+End = position 969 of sequence
+
+Motif = ATP_GTP_A
+
+CIYLNGEPGSGKSSFFDL
+     |      |
+   962      969
+
+Length = 8
+Start = position 1218 of sequence
+End = position 1225 of sequence
+
+Motif = TYR_PHOSPHO_SITE_2
+
+LCAEFRKAFEKHYRPYDK
+     |      |
+  1218      1225
+
+Length = 8
+Start = position 1098 of sequence
+End = position 1105 of sequence
+
+Motif = TYR_PHOSPHO_SITE_2
+
+HAKNKKYPQEKAYFEDLT
+     |      |
+  1098      1105
+
+Length = 8
+Start = position 373 of sequence
+End = position 380 of sequence
+
+Motif = TYR_PHOSPHO_SITE_2
+
+GDVLIRYLSESNYFNFDY
+     |      |
+   373      380
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:43
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_190     from: 1   to: 15
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 4
+Start = position 3 of sequence
+End = position 6 of sequence
+
+Motif = AMIDATION
+
+MEFGRRCLAQN
+  |  |
+  3  6
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:44
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_215     from: 1   to: 14
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 3
+Start = position 12 of sequence
+End = position 14 of sequence
+
+Motif = MICROBODIES_CTER
+
+PPLAQNRI
+     | |
+    12 14
+
+
+#---------------------------------------
+#---------------------------------------
+########################################
+# Program: patmatmotifs
+# Rundate: Fri 25 Oct 2024 14:33:44
+# Commandline: patmatmotifs
+#    -sequence orf_individual.fasta
+#    -outfile motifs_individual_results.txt
+# Report_format: dbmotif
+# Report_file: motifs_individual_results.txt
+########################################
+
+#=======================================
+#
+# Sequence: Virus_sequence_216     from: 1   to: 27
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 3
+Start = position 25 of sequence
+End = position 27 of sequence
+
+Motif = MICROBODIES_CTER
+
+APADKTRL
+     | |
+    25 27
+
+
+#---------------------------------------
+#---------------------------------------
