@@ -1,0 +1,19 @@
+Carpeta 'TP Logs' creada.
+Carpeta 'TP Resultados' creada.
+Se incorporó la mutación y se guardo en 'opsinamutada.gb'.
+La traduccion se completo y se guardo en 'traduccion.fasta'.
+Ejecutando búsqueda BLASTP...
+Búsqueda BLAST completada. Resultados guardados en blast_results.xml
+El archivo FASTA 'secuencias_BLAST.fasta' se creó correctamente, ordenado por e-value creciente.
+El alineamiento múltiple se completo y se guardo en 'MSA.fasta'.
+Buscando ORFs en la secuencia de nucleótidos...
+ORFs encontrados y guardados en orf_proteins.fasta
+Cantidad de ORFs encontrados: 25
+Motifs encontrado en la secuencia 7
+HitCount: 4
+Motifs encontrado en la secuencia 16
+HitCount: 1
+Se obtuvieron los ORFs y Motifs, y se guardaron en 'orf_proteins.fasta' y 'motifs_final_results.txt', respectivamente.
+El alineamiento múltiple se completo y se guardo en 'primers.fasta'.
+Archivos FASTA guardados en la carpeta TPResultados.
+Archivos log guardados en la carpeta TPLogs.
