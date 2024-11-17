@@ -1,5 +1,3 @@
-# Es necesario tener instalado primer3-py (pip install primer3-py o python3 -m pip install primer3-py, dependiendo la versión de pip instalada)
-
 import primer3
 import argparse
 from Bio import Seq, SeqIO
@@ -80,7 +78,7 @@ except (FileNotFoundError, ValueError) as e:
 
 
 # Preguntar al usuario si quiere utilizar los valores por defecto
-use_default = input("¿Desea utilizar los valores por defecto? (si/no): ").strip().lower()
+use_default = input("¿Desea utilizar los valores por defecto para el diseño de Primers? (si/no): ").strip().lower()
 
 
 # Si el usuario no quiere los valores por defecto, permitir ingresar valores personalizados
@@ -130,6 +128,5 @@ for i in range(primer_results['PRIMER_PAIR_NUM_RETURNED']):
 with open(args.archivo_primers, "w") as output_handle:
     SeqIO.write(records, output_handle, "fasta")
 
-print(f"Se han guardado los primers en el archivo {output_file}.")
 
 

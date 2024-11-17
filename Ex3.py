@@ -1,9 +1,17 @@
-# Instalar Biopython y MUSCLE (sudo apt-get install muscle)
-
 import subprocess
 from Bio import SeqIO
 import os
 import argparse
+
+
+
+def redirectLog(archivo_log, string):
+
+    print(string)
+
+    with open(archivo_log, 'a') as logueo:
+        logueo.write(string + '\n')
+
 
 
 def MSA(input_file_1, input_file_2, output_file):
@@ -39,16 +47,18 @@ def MSA(input_file_1, input_file_2, output_file):
            subprocess.run(["muscle", "-in", temp_file, "-out", output_file], stdout=log, stderr=log, check=True)
 
       except subprocess.CalledProcessError as e:
-           print(f"Error ejecutando MUSCLE: {e}")
+           if error_log_file:
+              redirectLog(error_log_file, f"Error ejecutando MUSCLE: {e}") 
 
 
    # Limpiar el archivo temporal
    os.remove(temp_file)
-
-
+   
 
 if __name__ == "__main__":
 
+   
+   error_log_file = os.environ.get('ERRORLOGFILE')
    
    parser = argparse.ArgumentParser(description = "Realizar un MSA y guardar el resultado en un archivo FASTA.")
    parser.add_argument("archivo_fasta_entrada_1", help = "Archivo FASTA con la secuencia query")
